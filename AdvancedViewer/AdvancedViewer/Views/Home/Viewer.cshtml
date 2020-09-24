@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JT Viewer</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jstree/dist/jstree.min.js"></script>
+    <link rel="stylesheet" href="~/Content/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jstree/dist/themes/default/style.min.css">
+</head>
+
+<body>
+    <div class="viewer-container">
+        <div id="model-scenegraph"></div>
+        <div id="model-viewer">
+            <button id="fitall-button" class="viewer-button">
+                <img src="~/Data/img/fitall.png">
+                <span>Fit all</span>
+            </button>
+            <div id="VPTableZone">
+                <div id="VPText"><p>Please select the element of structure</p></div>
+                <div id="VPLoading"><img src="~/Data/img/loading.gif"></div>
+                <table id="VPTable" style="visibility:hidden">
+                    <tr id="SurfaceArea">
+                        <td>
+                            SurfaceArea
+                        </td>
+                        <td class="value">
+                        </td>
+                    </tr>
+                    <tr id="Volume">
+                        <td>
+                            Volume
+                        </td>
+                        <td class="value">
+                        </td>
+                    </tr>
+                    <tr id="Centroid">
+                        <td>
+                            Centroid
+                        </td>
+                        <td class="value">
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill/dist/polyfill.min.js"></script>
+    <script src="~/Scripts/cadex.bundle.js"></script>
+    <script src="~/Scripts/viewer.js"></script>
+</body>
+<script>loadAndDisplayModel("/Data/Models/cdxfb", "@AdvansedViewer.Models.JTModel.name");</script>
+@Scripts.Render("~/scripts/jquery-3.3.1.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+</html>

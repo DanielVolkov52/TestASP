@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Styles.Render("~/Content/dropzone-css")
+    <body>
+        <div id="inputZone">
+        @using (Html.BeginForm("Upload", "Home",
+                       FormMethod.Post,
+                       new
+                       {
+                           enctype = "multipart/form-data",
+                           @class = "dropzone",
+                           id = "dropzone-form",
+                       }))
+        {
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+            
+        }
+        
+        @Scripts.Render("~/bundles/dropzone")
+        <script>
+
+            Dropzone.options.dropzoneForm = {
+                paramName: "fileUpload",
+                maxFilesize: 200,
+                maxFiles: 1,
+                dictMaxFilesExceeded: "Custom max files msg",
+                success: function (file, done) {
+                    document.getElementById('openButton').style.visibility = 'visible';
+                }
+            };
+        </script>
+        <a id="openButton" href="/Home/Viewer" style="visibility:hidden">Open</a>
+            </div>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>

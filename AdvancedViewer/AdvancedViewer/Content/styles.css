@@ -1,0 +1,220 @@
+@import url(https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,300;0,700;1,300&display=swap);
+
+html {
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+}
+
+.model-container {
+    display: flex;
+    margin: 2rem auto;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.model-card {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+.model-card:hover {
+    box-shadow: 0 0.25px 1rem rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.card-title {
+    color: #464a4c;
+}
+
+.viewer-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#model-scenegraph {
+    height: 100%;
+    min-width: 300px;
+    max-width: 30%;
+    overflow-y: auto;
+    border-right: 1px solid #aaaaaa;
+}
+
+#model-viewer {
+    position:relative;
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.viewer-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.25rem;
+    outline: 0;
+    z-index: 1;
+}
+
+.viewer-button:hover {
+    background-color: #ececec;
+}
+
+.viewer-button:active {
+    background-color: #e6e6e6;
+}
+
+.viewer-button:active,
+.viewer-button:focus {
+    box-shadow: 0 0 0 2px rgba(33,108,170,.25);
+}
+
+.jstree-container-ul {
+    padding: 0.5rem;
+}
+
+.icon-file {
+    background-image: url("../Data/img/assembly.ico") !important;
+    background-position: center !important;
+    background-size: unset !important;
+}
+
+.icon-assembly {
+    background-image: url("../Data/img/assembly.ico") !important;
+    background-position: center !important;
+    background-size: unset !important;
+}
+
+.icon-instance {
+    background-image: url("../Data/img/instance.ico") !important;
+    background-position: center !important;
+    background-size: unset !important;
+}
+
+.icon-part {
+    background-image: url("../Data/img/part.ico") !important;
+    background-position: center !important;
+    background-size: unset !important;
+}
+#VPTableZone {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    z-index: 10;
+    height: 200px;
+    width: 400px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    align-items: center;
+    justify-content: center;
+}
+#VPLoading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+}
+#VPLoading img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#VPText {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}
+#VPText p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+#VPTable {
+    position:absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+th,
+td {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: #000000;
+}
+
+th {
+    text-align: left;
+}
+
+
+#inputZone {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+#openButton {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 12px 40px;
+    margin: 20px 20px;
+    border-radius: 30px;
+    background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-align:center;
+    color: white;
+    box-shadow: 0 16px 32px 0 rgba(0,40,120,.35);
+    transition: .5s;
+    width:80px;
+}
+
+    #openButton:hover {
+        box-shadow: 0 0 0 0 rgba(0,40,120,0);
+        background-position: 0 0;
+    }

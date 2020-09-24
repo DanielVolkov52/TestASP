@@ -1,0 +1,45 @@
+# This file controls how Git converts line endings
+
+# By default use LF for all files treated as text
+* text eol=lf
+
+# Use CRLF for Visual Studio specific files
+*.def     text eol=crlf
+*.sln     text eol=crlf
+*.rc      text eol=crlf
+*.vcproj  text eol=crlf
+*.vcxproj text eol=crlf
+*.filters text eol=crlf
+*.props   text eol=crlf
+*.rules   text eol=crlf
+*.targets text eol=crlf
+*.ps1     text eol=crlf
+
+# Don't convert certain text files
+*.pdf  binary
+*.doc  binary
+*.rtf  binary
+*.docx binary
+
+# Don't convert image files
+*.png  binary
+*.gif  binary
+*.ico  binary
+*.icns binary
+*.bmp  binary
+
+# other binary files
+*.jar   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
+*.bin   binary
+*.xml   binary
+*.exe   binary
+*.dll   binary
+
+# License gen files
+server/license_gen/* binary
+
+# sample files
+sdk-js/examples/models/** binary
